@@ -1,0 +1,33 @@
+name: CI - Continuous Integration
+
+on:
+  pull_request:
+
+jobs:
+  testes:
+    name: Validar HTML e CSS
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        run: |
+          npm init -y
+          npm install -g htmlhint stylelint stylelint-config-standard
+
+      - name: Validar HTML
+        run: htmlhint "**/*.html"
+
+      - name: Validar CSS
+        run: |
+          echo '{"extends": "stylelint-config-standard"}' > .stylelintrc.json
+    
+      - name: Validar CSS
+        run: stylelint "**/*.css"
