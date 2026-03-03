@@ -1,12 +1,12 @@
 .navbar {
     margin-bottom: 0;
-    background: #000000;
+    background: #000;
 }
 
 body {
-    background: #000000;
-    color: #ffffff;
-    font-family: 'Merriweather', sans-serif;
+    background: #000;
+    color: #fff;
+    font-family: Merriweather, sans-serif;
 }
 
 h1,
@@ -16,7 +16,7 @@ h2 {
 
 p {
     font-size: 16px;
-    color: #ffffff;
+    color: #fff;
 }
 
 .jumbotron {
@@ -32,7 +32,7 @@ p {
 
 .btn-primary {
     color: #fff;
-    text-color: #000000;
+    background-color: #000;
     border-color: white;
     margin-bottom: 5px;
 }
